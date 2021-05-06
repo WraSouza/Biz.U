@@ -8,9 +8,17 @@ namespace Biz.U
     {
         public App()
         {
+            //Color cor = Color.Default;
+            Color cor = new Color();
+
+            if(Device.RuntimePlatform == Device.UWP)
+            {
+                cor = Color.FromHex("#303E6D");
+            }
+
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Views.LoginView()) { BarBackgroundColor = cor, BarTextColor = Color.White };
         }
 
         protected override void OnStart()
