@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="Biz.U.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Biz.U.Views"
+    xmlns:views="clr-namespace:Biz.U.Views">
+
+    <FlyoutItem Title="Início" Icon="home.png">
+        <Tab Title="Bolsas" Icon="bolsavaloresicon.png">
+            <ShellContent>
+                <pages:PrincipalView/>
+            </ShellContent>
+        </Tab>
+
+        <Tab Title="Criptomoedas" Icon="criptomoedasicon.png">
+            <ShellContent>
+                <pages:CriptomoedasView/>
+            </ShellContent>
+        </Tab>
+
+        <Tab Title="Moedas" Icon="moedasicon.png">
+            <ShellContent>
+                <pages:MoedasView/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Configurações" Icon="settings.png">
+        <ShellContent ContentTemplate="{DataTemplate views:ConfiguracoesView}" />
+    </FlyoutItem>
+
+</Shell>

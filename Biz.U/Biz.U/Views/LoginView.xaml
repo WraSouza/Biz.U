@@ -2,8 +2,13 @@
 <ContentPage
     x:Class="Biz.U.Views.LoginView"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:local="clr-namespace:Biz.U.ViewModel"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Login">
+    <ContentPage.BindingContext>
+        <local:LoginViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <Grid>
             <Image Aspect="Fill" Source="imagemfundologin.jpg" />
@@ -13,7 +18,7 @@
                 <Image HeightRequest="100" Source="bizu_logo.png" />
                 <Frame
                     CornerRadius="10"
-                    Opacity="0.9"
+                    Opacity="0.95"
                     BackgroundColor="White"
                     HorizontalOptions="CenterAndExpand"                    
                     VerticalOptions="CenterAndExpand"
@@ -24,7 +29,7 @@
                             Text="Usuário"
                             TextColor="#303E6D" />
 
-                        <Entry x:Name="entryUser" />
+                        <Entry x:Name="entryUser" Text="{Binding Nome}"/>
 
                         <Label
                             FontSize="20"
@@ -32,11 +37,13 @@
                             TextColor="#303E6D" />
 
                         <Entry x:Name="entrySenha"
+                               Text="{Binding Senha}"
                                IsPassword="True" />
 
                         <Button
                             BackgroundColor="#303E6D"
                             Text="Acessar"
+                            Command="{Binding VerificaUsuarioCommand}"
                             TextColor="White" />
 
                         <StackLayout Orientation="Horizontal">

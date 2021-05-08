@@ -2,19 +2,21 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
+
+
 namespace Biz.U
 {
     public partial class App : Application
     {
         public App()
-        {
-            //Color cor = Color.Default;
+        {           
             Color cor = new Color();
 
             if(Device.RuntimePlatform == Device.UWP)
             {
                 cor = Color.FromHex("#303E6D");
-            }
+            }            
 
             InitializeComponent();
 

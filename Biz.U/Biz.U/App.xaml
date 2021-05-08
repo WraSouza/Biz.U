@@ -3,6 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Biz.U.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#303E6D</Color>
+            <Color x:Key="WhiteColor">#ffffff</Color>
+            <Color x:Key="UnselectedColor">#87CEFA</Color>
 
+            <Style TargetType="Element" x:Key="FlyoutBaseStyle">
+                <Setter Property="Shell.TitleColor" Value="{StaticResource WhiteColor}"/>
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource WhiteColor}"/>
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource PrimaryColor}"/>
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource UnselectedColor}"/>
+
+            </Style>
+
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource FlyoutBaseStyle}"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
